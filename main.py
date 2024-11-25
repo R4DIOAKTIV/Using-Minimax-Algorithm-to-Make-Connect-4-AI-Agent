@@ -149,6 +149,12 @@ while not game_over:
         if event.type == pygame.QUIT:
             sys.exit()
 
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_r:
+                board = create_board()
+                game_over = False
+                turn = 0
+
         if turn == 0 and event.type == pygame.MOUSEBUTTONDOWN:
             col = event.pos[0] // SQUARESIZE
             if is_valid_location(board, col):
