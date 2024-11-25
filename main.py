@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 ROW_COUNT = 6
 COLUMN_COUNT = 7
@@ -6,6 +7,9 @@ PLAYER_PIECE = 1
 AI_PIECE = 2
 EMPTY = 0
 WINDOW_LENGTH = 4
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
 
 def create_board():
     board = np.zeros((ROW_COUNT, COLUMN_COUNT))
@@ -199,4 +203,5 @@ while not game_over:
             print("AI WINS!!")
             game_over = True
 
+    clear_screen()
     print_board(board)
